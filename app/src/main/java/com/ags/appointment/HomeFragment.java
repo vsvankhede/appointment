@@ -3,8 +3,11 @@ package com.ags.appointment;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
+
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +26,9 @@ public class HomeFragment extends Fragment {
     public EditText et_date;
 
     private String imagePath;
+
+    // Image loading result to pass to startActivityForResult method.
+    private static int LOAD_IMAGE_RESULTS = 1;
 
     public HomeFragment(){}
 	
@@ -45,9 +51,12 @@ public class HomeFragment extends Fragment {
         btn_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Create the Intent for Image camera.
-                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                getActivity().startActivityForResult(cameraIntent, 1888);
+                // Create the Intent for Image Gallery.
+                Intent i = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+
+                // Start new activity with the LOAD_IMAGE_RESULTS to handle back the results when image is picked from the Image Gallery.
+                startActivityForResult(i, LOAD_IMAGE_RESULTS);
+
             }
         });
         // Click Listner event for save data
@@ -60,7 +69,7 @@ public class HomeFragment extends Fragment {
                 String date = et_date.getText().toString();
                 String image = getImagePath();
 //                Log.d("Image Path", image);
-//                System.out.println(image);
+                System.out.println(image+"......................");
                 MyDatabase md = new MyDatabase(getActivity());
                 md.setAppointment(title, desc, date, time, image);
 
@@ -73,21 +82,20 @@ public class HomeFragment extends Fragment {
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        //
-        // super.onActivityResult(requestCode, resultCode, data);
-        if( requestCode == 1888 ) {
 
-            // Get image path captured from camera
-            //Uri selectedImageUri = data.getData();
-            imagePath = data.getData().toString();
-
-            // Setter imagepath
+        if (requestCode == LOAD_IMAGE_RESULTS && resultCode == getActivity().RESULT_OK && data != null) {
+            // Let's read picked image data - its URI
+            Uri pickedImage = data.getData();
+            // Let's read picked image path using content resolver
+            String[] filePath = {MediaStore.Images.Media.DATA};
+            Cursor cursor = getActivity().getContentResolver().query(pickedImage, filePath, null, null, null);
+            cursor.moveToFirst();
+            String imagePath = cursor.getString(cursor.getColumnIndex(filePath[0]));
             setImagePath(imagePath);
-            //Bitmap photo = (Bitmap) data.getExtras().get("data");
-          //  ((ImageView)inflatedView.findViewById(R.id.image)).setImageBitmap(photo);
+            //System.out.println(imagePath+".......................");
+            cursor.close();
         }
     }
-
     // Getter Setter
 
     public String getImagePath() {
