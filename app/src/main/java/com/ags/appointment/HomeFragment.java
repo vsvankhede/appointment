@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,7 +59,8 @@ public class HomeFragment extends Fragment {
                 String time = et_time.getText().toString();
                 String date = et_date.getText().toString();
                 String image = getImagePath();
-//                Log.d("Image Path", getImagePath());
+//                Log.d("Image Path", image);
+//                System.out.println(image);
                 MyDatabase md = new MyDatabase(getActivity());
                 md.setAppointment(title, desc, date, time, image);
 
