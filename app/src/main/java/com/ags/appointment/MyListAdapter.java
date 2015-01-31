@@ -2,8 +2,10 @@ package com.ags.appointment;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.BitmapFactory;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -25,9 +27,9 @@ public class MyListAdapter extends SimpleCursorAdapter {
             description.setText(cursor.getString(3));
 
             // create the description textview
-           // ImageView imageView = (ImageView) view.findViewById(R.id.list_image);
-            //description.setText(cursor.getString(3));
-
+            ImageView imageView = (ImageView) view.findViewById(R.id.list_image);
+            String path = cursor.getString(3);
+            imageView.setImageBitmap(BitmapFactory.decodeFile(path));
             // create the description textview
             TextView time = (TextView) view.findViewById(R.id.item_time);
             time.setText(cursor.getString(4));
