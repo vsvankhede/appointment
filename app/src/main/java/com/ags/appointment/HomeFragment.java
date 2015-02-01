@@ -1,6 +1,8 @@
 package com.ags.appointment;
 
+
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -8,27 +10,38 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import android.provider.MediaStore;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class HomeFragment extends Fragment {
+import com.doomonafireball.betterpickers.calendardatepicker.CalendarDatePickerDialog;
+import com.doomonafireball.betterpickers.timepicker.TimePickerBuilder;
+import com.doomonafireball.betterpickers.timepicker.TimePickerDialogFragment;
+import com.gc.materialdesign.views.ButtonRectangle;
 
-    public Button btn_save;
-    public Button btn_image;
+import org.joda.time.DateTime;
+
+import java.io.File;
+
+
+public class HomeFragment extends Fragment implements TimePickerDialogFragment.TimePickerDialogHandler,CalendarDatePickerDialog.OnDateSetListener{
+
+    //public Button btn_save;
 
     public EditText et_title;
     public EditText et_desc;
-    public EditText et_time;
-    public EditText et_date;
-
+    public TextView tv_time;
+    public TextView tv_date;
+    public TextView tv_picture;
     private String imagePath;
 
     // Image loading result to pass to startActivityForResult method.
     private static int LOAD_IMAGE_RESULTS = 1;
+    private static final String FRAG_TAG_DATE_PICKER = "fragment_date_picker_name";
 
     public HomeFragment(){}
 	
@@ -39,16 +52,18 @@ public class HomeFragment extends Fragment {
 
         final Context context = getActivity();
 
-        btn_save = (Button)rootView.findViewById(R.id.btn_save);
-        btn_image = (Button)rootView.findViewById(R.id.btn_img);
+        ButtonRectangle btn_save = (ButtonRectangle)rootView.findViewById(R.id.btn_save);
+        btn_save.setRippleSpeed(50f);
+
+        tv_picture = (TextView)rootView.findViewById(R.id.tv_picture);
 
         et_title = (EditText)rootView.findViewById(R.id.et_title);
         et_desc = (EditText)rootView.findViewById(R.id.et_desc);
-        et_time = (EditText)rootView.findViewById(R.id.et_time);
-        et_date = (EditText)rootView.findViewById(R.id.et_date);
+        tv_time = (TextView)rootView.findViewById(R.id.et_time);
+        tv_date = (TextView)rootView.findViewById(R.id.et_date);
 
         // Click Listener event for image gallery
-        btn_image.setOnClickListener(new View.OnClickListener() {
+        tv_picture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Create the Intent for Image Gallery.
@@ -65,19 +80,40 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 String title = et_title.getText().toString();
                 String desc = et_desc.getText().toString();
-                String time = et_time.getText().toString();
-                String date = et_date.getText().toString();
+                String time = tv_time.getText().toString();
+                String date = tv_date.getText().toString();
                 String image = getImagePath();
-//                Log.d("Image Path", image);
-                System.out.println(image+"......................");
                 MyDatabase md = new MyDatabase(getActivity());
                 md.setAppointment(title, desc, date, time, image);
-
                 Toast.makeText(context, "Appointment Saved!",
                         Toast.LENGTH_SHORT).show();
             }
         });
 
+        // Click Listner event for time picker
+        tv_time.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TimePickerBuilder tpb = new TimePickerBuilder()
+                        .setFragmentManager(getChildFragmentManager())
+                        .setStyleResId(R.style.BetterPickersDialogFragment_Light)
+                        .setTargetFragment(HomeFragment.this);
+                tpb.show();
+            }
+        });
+
+        // Click Listner event for time picker
+        tv_date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fm = getFragmentManager();
+                DateTime now = new DateTime();
+                CalendarDatePickerDialog calendarDatePickerDialog = CalendarDatePickerDialog
+                        .newInstance(HomeFragment.this, now.getYear(), now.getMonthOfYear() - 1,
+                                now.getDayOfMonth());
+                calendarDatePickerDialog.show(fm, FRAG_TAG_DATE_PICKER);
+            }
+        });
         return rootView;
     }
     @Override
@@ -92,7 +128,11 @@ public class HomeFragment extends Fragment {
             cursor.moveToFirst();
             String imagePath = cursor.getString(cursor.getColumnIndex(filePath[0]));
             setImagePath(imagePath);
-            //System.out.println(imagePath+".......................");
+
+            File f = new File(imagePath);
+            String imageName = f.getName();
+            tv_picture.setText(imageName);
+
             cursor.close();
         }
     }
@@ -104,5 +144,15 @@ public class HomeFragment extends Fragment {
 
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
+    }
+
+    @Override
+    public void onDateSet(CalendarDatePickerDialog calendarDatePickerDialog, int y, int m, int d) {
+        tv_date.setText(d+"/"+m+"/"+y);
+    }
+
+    @Override
+    public void onDialogTimeSet(int i, int h, int m) {
+        tv_time.setText( h + ":" + m);
     }
 }

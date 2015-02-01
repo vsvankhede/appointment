@@ -8,81 +8,699 @@
 package com.ags.appointment;
 
 public final class R {
+    public static final class anim {
+        public static final int dialog_main_hide_amination=0x7f040000;
+        public static final int dialog_main_show_amination=0x7f040001;
+        public static final int dialog_root_hide_amin=0x7f040002;
+        public static final int dialog_root_show_amin=0x7f040003;
+        public static final int progress_indeterminate_animation=0x7f040004;
+        public static final int snackbar_hide_animation=0x7f040005;
+        public static final int snackbar_show_animation=0x7f040006;
+    }
     public static final class array {
+        public static final int backup_country_codes=0x7f050000;
+        public static final int backup_country_names=0x7f050001;
         /**      <item>@drawable/ic_communities</item>
         <item>@drawable/ic_pages</item>
         <item>@drawable/ic_whats_hot</item> 
          */
-        public static final int nav_drawer_icons=0x7f040000;
-        public static final int nav_drawer_items=0x7f040001;
+        public static final int nav_drawer_icons=0x7f050002;
+        public static final int nav_drawer_items=0x7f050003;
+        public static final int recurrence_freq=0x7f050004;
+        public static final int repeat_by_nth_fri=0x7f050005;
+        public static final int repeat_by_nth_mon=0x7f050006;
+        public static final int repeat_by_nth_sat=0x7f050007;
+        public static final int repeat_by_nth_sun=0x7f050008;
+        public static final int repeat_by_nth_thurs=0x7f050009;
+        public static final int repeat_by_nth_tues=0x7f05000a;
+        public static final int repeat_by_nth_wed=0x7f05000b;
+        public static final int timezone_rename_ids=0x7f05000c;
+        public static final int timezone_rename_labels=0x7f05000d;
     }
     public static final class attr {
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int animate=0x7f010017;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int bpButtonBackground=0x7f010005;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int bpCheckIcon=0x7f010003;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int bpDeleteIcon=0x7f010002;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int bpDialogBackground=0x7f010009;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int bpDividerColor=0x7f010007;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int bpKeyBackground=0x7f010004;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int bpKeyboardIndicatorColor=0x7f010008;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int bpTextColor=0x7f010000;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int bpTitleColor=0x7f010001;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int bpTitleDividerColor=0x7f010006;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int check=0x7f010012;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int checkBoxSize=0x7f010013;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int clickAfterRipple=0x7f010019;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int iconDrawable=0x7f010015;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int iconSize=0x7f010016;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int max=0x7f01000d;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int min=0x7f01000e;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int progress=0x7f010010;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int ringWidth=0x7f010011;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int rippleBorderRadius=0x7f010018;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int rippleColor=0x7f01000a;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int rippleSpeed=0x7f01000b;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int showNumberIndicator=0x7f01000c;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int thumbSize=0x7f010014;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int value=0x7f01000f;
     }
     public static final class color {
-        public static final int counter_text_bg=0x7f050000;
-        public static final int counter_text_color=0x7f050001;
-        public static final int list_background=0x7f050002;
-        public static final int list_background_pressed=0x7f050003;
-        public static final int list_divider=0x7f050004;
-        public static final int list_item_title=0x7f050005;
+        public static final int bp_ampm_text_color=0x7f060000;
+        public static final int bp_black=0x7f060001;
+        public static final int bp_blue=0x7f060002;
+        public static final int bp_blue_focused=0x7f060003;
+        public static final int bp_calendar_header=0x7f060004;
+        public static final int bp_calendar_selected_date_text=0x7f060005;
+        public static final int bp_circle_background=0x7f060006;
+        public static final int bp_dark_gray=0x7f060007;
+        public static final int bp_darker_blue=0x7f060008;
+        public static final int bp_darker_red=0x7f060009;
+        public static final int bp_date_picker_text_normal=0x7f06000a;
+        public static final int bp_date_picker_view_animator=0x7f06000b;
+        public static final int bp_default_button_background_dark=0x7f06000c;
+        public static final int bp_default_button_background_light=0x7f06000d;
+        public static final int bp_default_button_background_pressed_dark=0x7f06000e;
+        public static final int bp_default_button_background_pressed_light=0x7f06000f;
+        public static final int bp_default_divider_color_dark=0x7f060010;
+        public static final int bp_default_divider_color_light=0x7f060011;
+        public static final int bp_default_keyboard_indicator_color_dark=0x7f060012;
+        public static final int bp_default_keyboard_indicator_color_light=0x7f060013;
+        public static final int bp_default_text_color_holo_dark=0x7f060014;
+        public static final int bp_default_text_color_holo_dark_disabled=0x7f060015;
+        public static final int bp_default_text_color_holo_light=0x7f060016;
+        public static final int bp_default_text_color_holo_light_disabled=0x7f060017;
+        public static final int bp_done_disabled_dark=0x7f060018;
+        public static final int bp_done_text_color_dark_disabled=0x7f060019;
+        public static final int bp_done_text_color_dark_normal=0x7f06001a;
+        public static final int bp_done_text_color_disabled=0x7f06001b;
+        public static final int bp_done_text_color_normal=0x7f06001c;
+        public static final int bp_light_gray=0x7f06001d;
+        public static final int bp_line_background=0x7f06001e;
+        public static final int bp_line_dark=0x7f06001f;
+        public static final int bp_neutral_pressed=0x7f060020;
+        public static final int bp_numbers_text_color=0x7f060021;
+        public static final int bp_recurrence_bubble_text_normal=0x7f060022;
+        public static final int bp_recurrence_picker_background=0x7f060023;
+        public static final int bp_red=0x7f060024;
+        public static final int bp_red_focused=0x7f060025;
+        public static final int bp_transparent=0x7f060026;
+        public static final int bp_transparent_black=0x7f060027;
+        public static final int bp_white=0x7f060028;
+        public static final int calendar_date_holo_dark=0x7f060033;
+        public static final int calendar_date_holo_light=0x7f060034;
+        public static final int counter_text_bg=0x7f060029;
+        public static final int counter_text_color=0x7f06002a;
+        public static final int date_picker_selector=0x7f060035;
+        public static final int date_picker_year_selector=0x7f060036;
+        public static final int dialog_text_color_holo_dark=0x7f060037;
+        public static final int dialog_text_color_holo_light=0x7f060038;
+        public static final int done_text_color=0x7f060039;
+        public static final int done_text_color_dark=0x7f06003a;
+        public static final int et_title_bg=0x7f06002b;
+        public static final int et_title_icon_bg=0x7f06002c;
+        public static final int green=0x7f06002d;
+        public static final int list_background=0x7f06002e;
+        public static final int list_background_pressed=0x7f06002f;
+        public static final int list_divider=0x7f060030;
+        public static final int list_item_title=0x7f060031;
+        public static final int recurrence_bubble_text_color=0x7f06003b;
+        public static final int recurrence_spinner_text_color=0x7f06003c;
+        public static final int thumbColor=0x7f060032;
     }
     public static final class dimen {
-        public static final int activity_horizontal_margin=0x7f060000;
-        public static final int activity_vertical_margin=0x7f060001;
+        public static final int activity_horizontal_margin=0x7f070000;
+        public static final int activity_vertical_margin=0x7f070001;
+        public static final int ampm_label_size=0x7f070002;
+        public static final int ampm_left_padding=0x7f070003;
+        public static final int body_font_padding=0x7f070004;
+        public static final int date_picker_component_width=0x7f070005;
+        public static final int date_picker_header_height=0x7f070006;
+        public static final int date_picker_header_text_size=0x7f070007;
+        public static final int date_picker_view_animator_height=0x7f070008;
+        public static final int date_viewpager_height=0x7f070009;
+        public static final int day_number_select_circle_radius=0x7f07000a;
+        public static final int day_number_size=0x7f07000b;
+        public static final int dialog_button_font_size=0x7f07000c;
+        public static final int dialog_height=0x7f07002f;
+        public static final int dialpad_font_size=0x7f07000d;
+        public static final int dialpad_font_size_ampm=0x7f07000e;
+        public static final int done_button_height=0x7f07000f;
+        public static final int done_label_size=0x7f070010;
+        public static final int extra_time_label_margin=0x7f070011;
+        public static final int footer_height=0x7f070012;
+        public static final int header_height=0x7f070013;
+        public static final int label_font_size=0x7f070014;
+        public static final int left_side_width=0x7f070030;
+        public static final int medium_date_font_size=0x7f070015;
+        public static final int medium_expiration_font_size=0x7f070016;
+        public static final int medium_font_padding=0x7f070017;
+        public static final int medium_font_size=0x7f070018;
+        public static final int medium_font_size_header=0x7f070019;
+        public static final int medium_font_size_hms=0x7f07001a;
+        public static final int minimum_margin_sides=0x7f07001b;
+        public static final int minimum_margin_top_bottom=0x7f07001c;
+        public static final int month_day_label_text_size=0x7f07001d;
+        public static final int month_label_size=0x7f07001e;
+        public static final int month_list_item_header_height=0x7f07001f;
+        public static final int month_list_item_padding=0x7f070031;
+        public static final int month_list_item_size=0x7f070032;
+        public static final int month_select_circle_radius=0x7f070020;
+        public static final int picker_dimen=0x7f070021;
+        public static final int recurrence_picker_height=0x7f070022;
+        public static final int recurrence_picker_width=0x7f070023;
+        public static final int selected_calendar_layout_height=0x7f070024;
+        public static final int selected_date_day_size=0x7f070025;
+        public static final int selected_date_month_size=0x7f070026;
+        public static final int selected_date_year_size=0x7f070027;
+        public static final int separator_padding=0x7f070028;
+        public static final int tablet_dialpad_font_size=0x7f070029;
+        public static final int tablet_dialpad_font_size_ampm=0x7f07002a;
+        public static final int time_label_right_padding=0x7f070033;
+        public static final int time_label_size=0x7f07002b;
+        public static final int timer_padding_left=0x7f07002c;
+        public static final int year_label_height=0x7f07002d;
+        public static final int year_label_text_size=0x7f07002e;
     }
     public static final class drawable {
-        public static final int counter_bg=0x7f020000;
-        public static final int ic_drawer=0x7f020001;
-        public static final int ic_home=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int ic_people=0x7f020004;
-        public static final int ic_photos=0x7f020005;
-        public static final int list_item_bg_normal=0x7f020006;
-        public static final int list_item_bg_pressed=0x7f020007;
-        public static final int list_selector=0x7f020008;
+        public static final int background_button=0x7f020000;
+        public static final int background_button_float=0x7f020001;
+        public static final int background_button_rectangle=0x7f020002;
+        public static final int background_checkbox=0x7f020003;
+        public static final int background_checkbox_check=0x7f020004;
+        public static final int background_checkbox_uncheck=0x7f020005;
+        public static final int background_progress=0x7f020006;
+        public static final int background_switch_ball_uncheck=0x7f020007;
+        public static final int background_transparent=0x7f020008;
+        public static final int button_background_dark=0x7f020009;
+        public static final int button_background_light=0x7f02000a;
+        public static final int counter_bg=0x7f02000b;
+        public static final int dialog_background=0x7f02000c;
+        public static final int dialog_full_holo_dark=0x7f02000d;
+        public static final int dialog_full_holo_light=0x7f02000e;
+        public static final int done_background_color=0x7f02000f;
+        public static final int done_background_color_dark=0x7f020010;
+        public static final int edit_text_holo_light=0x7f020011;
+        public static final int et_title_bg=0x7f020012;
+        public static final int float_button1_shadowp=0x7f020013;
+        public static final int float_button_shadow1=0x7f020014;
+        public static final int ic_backspace_dark=0x7f020015;
+        public static final int ic_backspace_disabled_dark=0x7f020016;
+        public static final int ic_backspace_disabled_light=0x7f020017;
+        public static final int ic_backspace_light=0x7f020018;
+        public static final int ic_backspace_normal_dark=0x7f020019;
+        public static final int ic_backspace_normal_light=0x7f02001a;
+        public static final int ic_check_dark=0x7f02001b;
+        public static final int ic_check_dark_disabled=0x7f02001c;
+        public static final int ic_check_light=0x7f02001d;
+        public static final int ic_check_light_disabled=0x7f02001e;
+        public static final int ic_check_normal_dark=0x7f02001f;
+        public static final int ic_check_normal_light=0x7f020020;
+        public static final int ic_clear_search_holo_light=0x7f020021;
+        public static final int ic_drawer=0x7f020022;
+        public static final int ic_home=0x7f020023;
+        public static final int ic_launcher=0x7f020024;
+        public static final int ic_logo=0x7f020025;
+        public static final int ic_people=0x7f020026;
+        public static final int ic_photos=0x7f020027;
+        public static final int ic_recurrence_bubble_disabled=0x7f020028;
+        public static final int ic_recurrence_bubble_fill=0x7f020029;
+        public static final int ic_recurrence_bubble_outline=0x7f02002a;
+        public static final int ic_recurrence_bubble_outline_disabled=0x7f02002b;
+        public static final int ic_reloj_max=0x7f02002c;
+        public static final int ic_search_holo_light=0x7f02002d;
+        public static final int item_background_holo_light=0x7f02002e;
+        public static final int key_background_dark=0x7f02002f;
+        public static final int key_background_light=0x7f020030;
+        public static final int list_focused_holo=0x7f020031;
+        public static final int list_item_bg_normal=0x7f020032;
+        public static final int list_item_bg_pressed=0x7f020033;
+        public static final int list_longpressed_holo_light=0x7f020034;
+        public static final int list_pressed_holo_light=0x7f020035;
+        public static final int list_selector=0x7f020036;
+        public static final int list_selector_background_transition_holo_light=0x7f020037;
+        public static final int list_selector_disabled_holo_light=0x7f020038;
+        public static final int recurrence_bubble_fill=0x7f020039;
+        public static final int shadow_down=0x7f02003a;
+        public static final int shadow_right=0x7f02003b;
+        public static final int spinner_background_holo_light=0x7f02003c;
+        public static final int spinner_default_holo_light=0x7f02003d;
+        public static final int spinner_disabled_holo_light=0x7f02003e;
+        public static final int spinner_focused_holo_light=0x7f02003f;
+        public static final int spinner_pressed_holo_light=0x7f020040;
+        public static final int sprite_check=0x7f020041;
+        public static final int textfield_activated_holo_light=0x7f020042;
+        public static final int textfield_default_holo_light=0x7f020043;
+        public static final int textfield_disabled_focused_holo_light=0x7f020044;
+        public static final int textfield_disabled_holo_light=0x7f020045;
+        public static final int textfield_focused_holo_light=0x7f020046;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0014;
-        public static final int btn_img=0x7f0a000a;
-        public static final int btn_save=0x7f0a000b;
-        public static final int counter=0x7f0a0005;
-        public static final int drawer_layout=0x7f0a0000;
-        public static final int et_date=0x7f0a0009;
-        public static final int et_desc=0x7f0a0007;
-        public static final int et_time=0x7f0a0008;
-        public static final int et_title=0x7f0a0006;
-        public static final int frame_container=0x7f0a0001;
-        public static final int icon=0x7f0a0003;
-        public static final int img_abt=0x7f0a000c;
-        public static final int item_date=0x7f0a0013;
-        public static final int item_desc=0x7f0a0011;
-        public static final int item_time=0x7f0a0012;
-        public static final int item_title=0x7f0a0010;
-        public static final int list_image=0x7f0a000f;
-        public static final int list_slidermenu=0x7f0a0002;
-        public static final int thumbnail=0x7f0a000e;
-        public static final int title=0x7f0a0004;
-        public static final int txtLabel=0x7f0a000d;
+        public static final int action_settings=0x7f08008a;
+        public static final int ampm_hitspace=0x7f08005a;
+        public static final int ampm_label=0x7f08005b;
+        public static final int animator=0x7f08000e;
+        public static final int blue=0x7f080015;
+        public static final int btn_save=0x7f080034;
+        public static final int button_accept=0x7f080029;
+        public static final int button_cancel=0x7f080028;
+        public static final int buttonflat=0x7f08007a;
+        public static final int calendar_date_picker_line=0x7f080006;
+        public static final int cancel_button=0x7f080018;
+        public static final int center_view=0x7f080054;
+        public static final int clear_search=0x7f080087;
+        public static final int contentDialog=0x7f080024;
+        public static final int contentSelector=0x7f080011;
+        public static final int counter=0x7f08002b;
+        public static final int date=0x7f08001d;
+        public static final int date_keyboard=0x7f080000;
+        public static final int date_month_int=0x7f080001;
+        public static final int date_picker=0x7f080016;
+        public static final int date_picker_day=0x7f08000c;
+        public static final int date_picker_header=0x7f080008;
+        public static final int date_picker_month=0x7f08000b;
+        public static final int date_picker_month_and_day=0x7f08000a;
+        public static final int date_picker_year=0x7f08000d;
+        public static final int date_text=0x7f08001b;
+        public static final int day_picker_selected_date_layout=0x7f080009;
+        public static final int decimal=0x7f08004e;
+        public static final int decimal_separator=0x7f08004d;
+        public static final int delete=0x7f08001f;
+        public static final int dialog_rootView=0x7f080023;
+        public static final int divider=0x7f080020;
+        public static final int divider_1=0x7f080017;
+        public static final int divider_2=0x7f080019;
+        public static final int done=0x7f080007;
+        public static final int done_button=0x7f080060;
+        public static final int drawer_layout=0x7f080003;
+        public static final int empty_item=0x7f08002c;
+        public static final int endCount=0x7f08006f;
+        public static final int endDate=0x7f080071;
+        public static final int endGroup=0x7f08006d;
+        public static final int endSpinner=0x7f08006e;
+        public static final int error=0x7f080051;
+        public static final int et_date=0x7f080031;
+        public static final int et_desc=0x7f080030;
+        public static final int et_time=0x7f080032;
+        public static final int et_title=0x7f08002f;
+        public static final int expiration_picker=0x7f08002d;
+        public static final int expiration_seperator=0x7f08002e;
+        public static final int first=0x7f080042;
+        public static final int fourth=0x7f080045;
+        public static final int frame_container=0x7f080004;
+        public static final int freqSpinner=0x7f080061;
+        public static final int green=0x7f080014;
+        public static final int header=0x7f080046;
+        public static final int hms_picker=0x7f080038;
+        public static final int hms_text=0x7f080039;
+        public static final int horizontal_scroll_view=0x7f08004a;
+        public static final int hour_space=0x7f080055;
+        public static final int hours=0x7f080057;
+        public static final int hours_label=0x7f08003b;
+        public static final int hours_ones=0x7f08003a;
+        public static final int hours_seperator=0x7f080081;
+        public static final int hours_tens=0x7f080080;
+        public static final int icon=0x7f08002a;
+        public static final int img_abt=0x7f080036;
+        public static final int interval=0x7f080066;
+        public static final int intervalGroup=0x7f080064;
+        public static final int intervalPostText=0x7f080067;
+        public static final int intervalPreText=0x7f080065;
+        public static final int item_date=0x7f080078;
+        public static final int item_desc=0x7f080076;
+        public static final int item_time=0x7f080077;
+        public static final int item_title=0x7f080075;
+        public static final int key_left=0x7f08007c;
+        public static final int key_middle=0x7f08007d;
+        public static final int key_right=0x7f08007e;
+        public static final int keyboard_indicator=0x7f080021;
+        public static final int keyboard_pager=0x7f080022;
+        public static final int label=0x7f08004f;
+        public static final int line=0x7f08005f;
+        public static final int list=0x7f080035;
+        public static final int list_image=0x7f080074;
+        public static final int list_slidermenu=0x7f080005;
+        public static final int location=0x7f080085;
+        public static final int message=0x7f080027;
+        public static final int message_scrollView=0x7f080026;
+        public static final int minus_label=0x7f080050;
+        public static final int minutes=0x7f080059;
+        public static final int minutes_label=0x7f08003e;
+        public static final int minutes_ones=0x7f08003d;
+        public static final int minutes_space=0x7f080058;
+        public static final int minutes_tens=0x7f08003c;
+        public static final int month=0x7f08001c;
+        public static final int monthGroup=0x7f08006a;
+        public static final int month_text_view=0x7f08000f;
+        public static final int number=0x7f08004c;
+        public static final int number_indicator_spinner_content=0x7f080047;
+        public static final int number_picker=0x7f080048;
+        public static final int number_text=0x7f08004b;
+        public static final int number_view_container=0x7f080049;
+        public static final int numbers_key=0x7f080002;
+        public static final int options=0x7f080063;
+        public static final int postEndCount=0x7f080070;
+        public static final int progressBarCircularIndetermininate=0x7f080052;
+        public static final int red=0x7f080013;
+        public static final int repeatMonthlyByNthDayOfMonth=0x7f08006b;
+        public static final int repeatMonthlyByNthDayOfTheWeek=0x7f08006c;
+        public static final int repeat_switch=0x7f080062;
+        public static final int rootSelector=0x7f080010;
+        public static final int searchBox=0x7f080086;
+        public static final int second=0x7f080043;
+        public static final int seconds_label=0x7f080041;
+        public static final int seconds_ones=0x7f080040;
+        public static final int seconds_tens=0x7f08003f;
+        public static final int separator=0x7f080056;
+        public static final int set_button=0x7f08001a;
+        public static final int shape_bacground=0x7f080089;
+        public static final int snackbar=0x7f080079;
+        public static final int spinner_item=0x7f080072;
+        public static final int text=0x7f08007b;
+        public static final int third=0x7f080044;
+        public static final int thumbnail=0x7f080073;
+        public static final int time_display=0x7f080053;
+        public static final int time_display_background=0x7f08005d;
+        public static final int time_offset=0x7f080084;
+        public static final int time_picker=0x7f08005e;
+        public static final int time_picker_dialog=0x7f08005c;
+        public static final int time_zone=0x7f080083;
+        public static final int timer_time_text=0x7f08007f;
+        public static final int timezonelist=0x7f080088;
+        public static final int title=0x7f080025;
+        public static final int tv_picture=0x7f080033;
+        public static final int txtLabel=0x7f080037;
+        public static final int value=0x7f080082;
+        public static final int viewColor=0x7f080012;
+        public static final int weekGroup=0x7f080068;
+        public static final int weekGroup2=0x7f080069;
+        public static final int year_label=0x7f08001e;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int drawer_list_item=0x7f030001;
-        public static final int fragment_home=0x7f030002;
-        public static final int fragment_list=0x7f030003;
-        public static final int fragment_photos=0x7f030004;
-        public static final int row_list=0x7f030005;
+        public static final int calendar_date_picker_dialog=0x7f030001;
+        public static final int calendar_date_picker_done_button=0x7f030002;
+        public static final int calendar_date_picker_header_view=0x7f030003;
+        public static final int calendar_date_picker_selected_date=0x7f030004;
+        public static final int calendar_date_picker_view_animator=0x7f030005;
+        public static final int calendar_year_label_text_view=0x7f030006;
+        public static final int color_selector=0x7f030007;
+        public static final int date_picker_dialog=0x7f030008;
+        public static final int date_picker_view=0x7f030009;
+        public static final int dialog=0x7f03000a;
+        public static final int drawer_list_item=0x7f03000b;
+        public static final int empty_time_zone_item=0x7f03000c;
+        public static final int expiration_picker_dialog=0x7f03000d;
+        public static final int expiration_picker_view=0x7f03000e;
+        public static final int fragment_home=0x7f03000f;
+        public static final int fragment_list=0x7f030010;
+        public static final int fragment_photos=0x7f030011;
+        public static final int hms_picker_dialog=0x7f030012;
+        public static final int hms_picker_view=0x7f030013;
+        public static final int keyboard=0x7f030014;
+        public static final int keyboard_right_drawable=0x7f030015;
+        public static final int keyboard_right_drawable_with_header=0x7f030016;
+        public static final int keyboard_text=0x7f030017;
+        public static final int keyboard_text_with_header=0x7f030018;
+        public static final int keyboard_with_header=0x7f030019;
+        public static final int number_indicator_spinner=0x7f03001a;
+        public static final int number_picker_dialog=0x7f03001b;
+        public static final int number_picker_view=0x7f03001c;
+        public static final int progress_dialog=0x7f03001d;
+        public static final int radial_time_header_label=0x7f03001e;
+        public static final int radial_time_picker_dialog=0x7f03001f;
+        public static final int recurrencepicker=0x7f030020;
+        public static final int recurrencepicker_end_text=0x7f030021;
+        public static final int recurrencepicker_freq_item=0x7f030022;
+        public static final int recurrencepicker_zh=0x7f030023;
+        public static final int row_list=0x7f030024;
+        public static final int snackbar=0x7f030025;
+        public static final int three_keys_view=0x7f030026;
+        public static final int three_keys_view_leftright=0x7f030027;
+        public static final int three_keys_view_right_drawable=0x7f030028;
+        public static final int three_keys_view_text=0x7f030029;
+        public static final int time_picker_dialog=0x7f03002a;
+        public static final int time_picker_view=0x7f03002b;
+        public static final int time_zone_filter_item=0x7f03002c;
+        public static final int time_zone_item=0x7f03002d;
+        public static final int timezonepickerview=0x7f03002e;
     }
     public static final class menu {
-        public static final int main=0x7f090000;
+        public static final int main=0x7f0c0000;
+    }
+    public static final class plurals {
+        public static final int daily=0x7f090000;
+        public static final int endByCount=0x7f090001;
+        public static final int monthly_zh=0x7f090002;
+        public static final int recurrence_end_count=0x7f090003;
+        public static final int recurrence_interval_daily=0x7f090004;
+        public static final int recurrence_interval_monthly=0x7f090005;
+        public static final int recurrence_interval_weekly=0x7f090006;
+        public static final int recurrence_interval_yearly=0x7f090007;
+        public static final int weekly=0x7f090008;
+        public static final int weekly_zh=0x7f090009;
+        public static final int yearly_zh=0x7f09000a;
     }
     public static final class string {
-        public static final int action_settings=0x7f070000;
-        public static final int app_name=0x7f070001;
-        public static final int desc_about=0x7f070002;
-        public static final int desc_list_item_icon=0x7f070003;
-        public static final int drawer_close=0x7f070004;
-        public static final int drawer_open=0x7f070005;
-        public static final int hello_world=0x7f070006;
+        public static final int acessibility_recurrence_choose_end_date_description=0x7f0a0000;
+        public static final int action_settings=0x7f0a0001;
+        public static final int ampm_circle_radius_multiplier=0x7f0a0002;
+        public static final int app_name=0x7f0a0003;
+        public static final int circle_radius_multiplier=0x7f0a0004;
+        public static final int circle_radius_multiplier_24HourMode=0x7f0a0005;
+        public static final int day_c=0x7f0a0006;
+        public static final int day_of_week_label_typeface=0x7f0a0007;
+        public static final int day_picker_description=0x7f0a0008;
+        public static final int deleted_key=0x7f0a0009;
+        public static final int desc_about=0x7f0a000a;
+        public static final int desc_list_item_icon=0x7f0a000b;
+        public static final int done_label=0x7f0a000c;
+        public static final int drawer_close=0x7f0a000d;
+        public static final int drawer_open=0x7f0a000e;
+        public static final int endByDate=0x7f0a000f;
+        public static final int every_weekday=0x7f0a0010;
+        public static final int expiration_picker_seperator=0x7f0a0011;
+        public static final int hello_world=0x7f0a0012;
+        public static final int hint_time_zone_search=0x7f0a0013;
+        public static final int hms_picker_hours_label=0x7f0a0014;
+        public static final int hms_picker_minutes_label=0x7f0a0015;
+        public static final int hms_picker_seconds_label=0x7f0a0016;
+        public static final int hour_picker_description=0x7f0a0017;
+        public static final int hours_label=0x7f0a0018;
+        public static final int hours_label_description=0x7f0a0019;
+        public static final int item_is_selected=0x7f0a001a;
+        public static final int max_error=0x7f0a001b;
+        public static final int min_error=0x7f0a001c;
+        public static final int min_max_error=0x7f0a001d;
+        public static final int minute_picker_description=0x7f0a001e;
+        public static final int minutes_label=0x7f0a001f;
+        public static final int minutes_label_description=0x7f0a0020;
+        public static final int month_c=0x7f0a0021;
+        public static final int monthly=0x7f0a0022;
+        public static final int no_results_found=0x7f0a0023;
+        public static final int number_delete=0x7f0a0024;
+        public static final int number_picker_minus_label=0x7f0a0025;
+        public static final int number_picker_plus_minus=0x7f0a0026;
+        public static final int number_picker_seperator=0x7f0a0027;
+        public static final int numbers_radius_multiplier_inner=0x7f0a0028;
+        public static final int numbers_radius_multiplier_normal=0x7f0a0029;
+        public static final int numbers_radius_multiplier_outer=0x7f0a002a;
+        public static final int palestine_display_name=0x7f0a002b;
+        public static final int picker_cancel=0x7f0a002c;
+        public static final int picker_set=0x7f0a002d;
+        public static final int radial_numbers_typeface=0x7f0a002e;
+        public static final int recurrence_end_continously=0x7f0a002f;
+        public static final int recurrence_end_count_label=0x7f0a0030;
+        public static final int recurrence_end_date=0x7f0a0031;
+        public static final int recurrence_end_date_label=0x7f0a0032;
+        public static final int recurrence_month_pattern_by_day=0x7f0a0033;
+        public static final int sans_serif=0x7f0a0034;
+        public static final int sans_serif_light=0x7f0a0035;
+        public static final int save_label=0x7f0a0036;
+        public static final int searchview_description_clear=0x7f0a0037;
+        public static final int seconds_label=0x7f0a0038;
+        public static final int seconds_label_description=0x7f0a0039;
+        public static final int select_day=0x7f0a003a;
+        public static final int select_hours=0x7f0a003b;
+        public static final int select_minutes=0x7f0a003c;
+        public static final int select_year=0x7f0a003d;
+        public static final int selection_radius_multiplier=0x7f0a003e;
+        public static final int text_size_multiplier_inner=0x7f0a003f;
+        public static final int text_size_multiplier_normal=0x7f0a0040;
+        public static final int text_size_multiplier_outer=0x7f0a0041;
+        public static final int time_picker_00_label=0x7f0a0042;
+        public static final int time_picker_30_label=0x7f0a0043;
+        public static final int time_picker_ampm_label=0x7f0a0044;
+        public static final int time_picker_time_seperator=0x7f0a0045;
+        public static final int time_placeholder=0x7f0a0046;
+        public static final int time_separator=0x7f0a0047;
+        public static final int timer_delete=0x7f0a0048;
+        public static final int year_c=0x7f0a0049;
+        public static final int year_picker_description=0x7f0a004a;
+        public static final int yearly_plain=0x7f0a004b;
     }
     public static final class style {
         /** 
@@ -93,9 +711,458 @@ public final class R {
  API 11 theme customizations can go here. 
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f080000;
+        public static final int AppBaseTheme=0x7f0b0000;
         /**  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f080001;
+        public static final int AppTheme=0x7f0b0001;
+        public static final int BetterPickersDialogFragment=0x7f0b0002;
+        public static final int BetterPickersDialogFragment_Light=0x7f0b0003;
+        public static final int RecurrenceDayOfWeekStyle=0x7f0b0004;
+        public static final int TextAppearance_EditEvent_Spinner=0x7f0b0005;
+        public static final int TextAppearance_EditEvent_SpinnerButton=0x7f0b0006;
+        public static final int TextAppearance_RecurrencePickerStyle=0x7f0b0007;
+        public static final int aosp_ampm_label=0x7f0b0008;
+        public static final int aosp_day_of_week_label_condensed=0x7f0b0009;
+        public static final int aosp_time_label=0x7f0b000a;
+        public static final int dialog_button=0x7f0b000b;
+        public static final int dialpad=0x7f0b000c;
+        public static final int dialpad_text=0x7f0b000d;
+        public static final int label=0x7f0b000e;
+        public static final int medium_bold=0x7f0b000f;
+        public static final int medium_bold_date=0x7f0b0010;
+        public static final int medium_bold_hms=0x7f0b0011;
+        public static final int medium_light=0x7f0b0012;
+        public static final int medium_light_date=0x7f0b0013;
+        public static final int medium_light_expiration=0x7f0b0014;
+        public static final int medium_light_header=0x7f0b0015;
+        public static final int medium_light_hms=0x7f0b0016;
+        public static final int tablet_dialpad=0x7f0b0017;
+        public static final int tablet_dialpad_text=0x7f0b0018;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a BetterPickersDialogFragment.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #BetterPickersDialogFragment_bpButtonBackground info.androidhive.slidingmenu:bpButtonBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #BetterPickersDialogFragment_bpCheckIcon info.androidhive.slidingmenu:bpCheckIcon}</code></td><td></td></tr>
+           <tr><td><code>{@link #BetterPickersDialogFragment_bpDeleteIcon info.androidhive.slidingmenu:bpDeleteIcon}</code></td><td></td></tr>
+           <tr><td><code>{@link #BetterPickersDialogFragment_bpDialogBackground info.androidhive.slidingmenu:bpDialogBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #BetterPickersDialogFragment_bpDividerColor info.androidhive.slidingmenu:bpDividerColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #BetterPickersDialogFragment_bpKeyBackground info.androidhive.slidingmenu:bpKeyBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #BetterPickersDialogFragment_bpKeyboardIndicatorColor info.androidhive.slidingmenu:bpKeyboardIndicatorColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #BetterPickersDialogFragment_bpTextColor info.androidhive.slidingmenu:bpTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #BetterPickersDialogFragment_bpTitleColor info.androidhive.slidingmenu:bpTitleColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #BetterPickersDialogFragment_bpTitleDividerColor info.androidhive.slidingmenu:bpTitleDividerColor}</code></td><td></td></tr>
+           </table>
+           @see #BetterPickersDialogFragment_bpButtonBackground
+           @see #BetterPickersDialogFragment_bpCheckIcon
+           @see #BetterPickersDialogFragment_bpDeleteIcon
+           @see #BetterPickersDialogFragment_bpDialogBackground
+           @see #BetterPickersDialogFragment_bpDividerColor
+           @see #BetterPickersDialogFragment_bpKeyBackground
+           @see #BetterPickersDialogFragment_bpKeyboardIndicatorColor
+           @see #BetterPickersDialogFragment_bpTextColor
+           @see #BetterPickersDialogFragment_bpTitleColor
+           @see #BetterPickersDialogFragment_bpTitleDividerColor
+         */
+        public static final int[] BetterPickersDialogFragment = {
+            0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003,
+            0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007,
+            0x7f010008, 0x7f010009
+        };
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#bpButtonBackground}
+          attribute's value can be found in the {@link #BetterPickersDialogFragment} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name info.androidhive.slidingmenu:bpButtonBackground
+        */
+        public static final int BetterPickersDialogFragment_bpButtonBackground = 5;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#bpCheckIcon}
+          attribute's value can be found in the {@link #BetterPickersDialogFragment} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name info.androidhive.slidingmenu:bpCheckIcon
+        */
+        public static final int BetterPickersDialogFragment_bpCheckIcon = 3;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#bpDeleteIcon}
+          attribute's value can be found in the {@link #BetterPickersDialogFragment} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name info.androidhive.slidingmenu:bpDeleteIcon
+        */
+        public static final int BetterPickersDialogFragment_bpDeleteIcon = 2;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#bpDialogBackground}
+          attribute's value can be found in the {@link #BetterPickersDialogFragment} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name info.androidhive.slidingmenu:bpDialogBackground
+        */
+        public static final int BetterPickersDialogFragment_bpDialogBackground = 9;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#bpDividerColor}
+          attribute's value can be found in the {@link #BetterPickersDialogFragment} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name info.androidhive.slidingmenu:bpDividerColor
+        */
+        public static final int BetterPickersDialogFragment_bpDividerColor = 7;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#bpKeyBackground}
+          attribute's value can be found in the {@link #BetterPickersDialogFragment} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name info.androidhive.slidingmenu:bpKeyBackground
+        */
+        public static final int BetterPickersDialogFragment_bpKeyBackground = 4;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#bpKeyboardIndicatorColor}
+          attribute's value can be found in the {@link #BetterPickersDialogFragment} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name info.androidhive.slidingmenu:bpKeyboardIndicatorColor
+        */
+        public static final int BetterPickersDialogFragment_bpKeyboardIndicatorColor = 8;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#bpTextColor}
+          attribute's value can be found in the {@link #BetterPickersDialogFragment} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name info.androidhive.slidingmenu:bpTextColor
+        */
+        public static final int BetterPickersDialogFragment_bpTextColor = 0;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#bpTitleColor}
+          attribute's value can be found in the {@link #BetterPickersDialogFragment} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name info.androidhive.slidingmenu:bpTitleColor
+        */
+        public static final int BetterPickersDialogFragment_bpTitleColor = 1;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#bpTitleDividerColor}
+          attribute's value can be found in the {@link #BetterPickersDialogFragment} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name info.androidhive.slidingmenu:bpTitleDividerColor
+        */
+        public static final int BetterPickersDialogFragment_bpTitleDividerColor = 6;
+        /** Attributes that can be used with a CustomAttributes.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CustomAttributes_animate info.androidhive.slidingmenu:animate}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_check info.androidhive.slidingmenu:check}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_checkBoxSize info.androidhive.slidingmenu:checkBoxSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_clickAfterRipple info.androidhive.slidingmenu:clickAfterRipple}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_iconDrawable info.androidhive.slidingmenu:iconDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_iconSize info.androidhive.slidingmenu:iconSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_max info.androidhive.slidingmenu:max}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_min info.androidhive.slidingmenu:min}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_progress info.androidhive.slidingmenu:progress}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_ringWidth info.androidhive.slidingmenu:ringWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_rippleBorderRadius info.androidhive.slidingmenu:rippleBorderRadius}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_rippleColor info.androidhive.slidingmenu:rippleColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_rippleSpeed info.androidhive.slidingmenu:rippleSpeed}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_showNumberIndicator info.androidhive.slidingmenu:showNumberIndicator}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_thumbSize info.androidhive.slidingmenu:thumbSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #CustomAttributes_value info.androidhive.slidingmenu:value}</code></td><td></td></tr>
+           </table>
+           @see #CustomAttributes_animate
+           @see #CustomAttributes_check
+           @see #CustomAttributes_checkBoxSize
+           @see #CustomAttributes_clickAfterRipple
+           @see #CustomAttributes_iconDrawable
+           @see #CustomAttributes_iconSize
+           @see #CustomAttributes_max
+           @see #CustomAttributes_min
+           @see #CustomAttributes_progress
+           @see #CustomAttributes_ringWidth
+           @see #CustomAttributes_rippleBorderRadius
+           @see #CustomAttributes_rippleColor
+           @see #CustomAttributes_rippleSpeed
+           @see #CustomAttributes_showNumberIndicator
+           @see #CustomAttributes_thumbSize
+           @see #CustomAttributes_value
+         */
+        public static final int[] CustomAttributes = {
+            0x7f01000a, 0x7f01000b, 0x7f01000c, 0x7f01000d,
+            0x7f01000e, 0x7f01000f, 0x7f010010, 0x7f010011,
+            0x7f010012, 0x7f010013, 0x7f010014, 0x7f010015,
+            0x7f010016, 0x7f010017, 0x7f010018, 0x7f010019
+        };
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#animate}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name info.androidhive.slidingmenu:animate
+        */
+        public static final int CustomAttributes_animate = 13;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#check}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name info.androidhive.slidingmenu:check
+        */
+        public static final int CustomAttributes_check = 8;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#checkBoxSize}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name info.androidhive.slidingmenu:checkBoxSize
+        */
+        public static final int CustomAttributes_checkBoxSize = 9;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#clickAfterRipple}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name info.androidhive.slidingmenu:clickAfterRipple
+        */
+        public static final int CustomAttributes_clickAfterRipple = 15;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#iconDrawable}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name info.androidhive.slidingmenu:iconDrawable
+        */
+        public static final int CustomAttributes_iconDrawable = 11;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#iconSize}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name info.androidhive.slidingmenu:iconSize
+        */
+        public static final int CustomAttributes_iconSize = 12;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#max}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name info.androidhive.slidingmenu:max
+        */
+        public static final int CustomAttributes_max = 3;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#min}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name info.androidhive.slidingmenu:min
+        */
+        public static final int CustomAttributes_min = 4;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#progress}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name info.androidhive.slidingmenu:progress
+        */
+        public static final int CustomAttributes_progress = 6;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#ringWidth}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name info.androidhive.slidingmenu:ringWidth
+        */
+        public static final int CustomAttributes_ringWidth = 7;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#rippleBorderRadius}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name info.androidhive.slidingmenu:rippleBorderRadius
+        */
+        public static final int CustomAttributes_rippleBorderRadius = 14;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#rippleColor}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name info.androidhive.slidingmenu:rippleColor
+        */
+        public static final int CustomAttributes_rippleColor = 0;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#rippleSpeed}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name info.androidhive.slidingmenu:rippleSpeed
+        */
+        public static final int CustomAttributes_rippleSpeed = 1;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#showNumberIndicator}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name info.androidhive.slidingmenu:showNumberIndicator
+        */
+        public static final int CustomAttributes_showNumberIndicator = 2;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#thumbSize}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name info.androidhive.slidingmenu:thumbSize
+        */
+        public static final int CustomAttributes_thumbSize = 10;
+        /**
+          <p>This symbol is the offset where the {@link info.androidhive.slidingmenu.R.attr#value}
+          attribute's value can be found in the {@link #CustomAttributes} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name info.androidhive.slidingmenu:value
+        */
+        public static final int CustomAttributes_value = 5;
+    };
 }

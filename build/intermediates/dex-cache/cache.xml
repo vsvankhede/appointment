@@ -23,6 +23,20 @@
         <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0-da7f6d4a2578328f7d18a9b32b1daa8a6a532adf.jar" />
     </item>
     <item
+        jar="E:\Workplace\Android\SlidingMenu\app\build\intermediates\exploded-aar\com.github.navasmdc\MaterialDesign\1.4\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="87405405e403de68f4057757b8a2e8de02bd65d0">
+        <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\classes-cbfc69dc5d1451394b301455a8cae92a7d4abee8.jar" />
+    </item>
+    <item
+        jar="C:\Users\vsvankhede\.gradle\caches\modules-2\files-2.1\joda-time\joda-time\2.3\56498efd17752898cfcc3868c1b6211a07b12b8f\joda-time-2.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="56498efd17752898cfcc3868c1b6211a07b12b8f">
+        <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\joda-time-2.3-dac04fe458008d738a665a9d942a634ac1b13e67.jar" />
+    </item>
+    <item
         jar="E:\Workplace\Android\SlidingMenu\app\build\intermediates\exploded-aar\com.nhaarman.listviewanimations\lib-core\3.1.0\classes.jar"
         jumboMode="false"
         revision="20.0.0"
@@ -35,6 +49,13 @@
         revision="20.0.0"
         sha1="5660e4bf78904137e90e62a5d4cc2e987258f02c">
         <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\classes-fd6db571a8e9d4ed2adb1e4b81b0ad6d18577224.jar" />
+    </item>
+    <item
+        jar="E:\Workplace\Android\SlidingMenu\app\build\intermediates\exploded-aar\library-release\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="a68bfb616b1ad432ded36ab089748fabba76f203">
+        <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\classes-324c486fd450e8624103e3dd93b8ab1a0085926a.jar" />
     </item>
 
 </items>
