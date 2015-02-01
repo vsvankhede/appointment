@@ -2,6 +2,13 @@
 <items version="2" >
 
     <item
+        jar="E:\Workplace\Android\SlidingMenu\app\build\intermediates\exploded-aar\com.nhaarman.listviewanimations\lib-core-slh\3.1.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="49223278ec2ede1d05d00868c5ce3e077b4016f8">
+        <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\classes-7093ddc2fd2105f8ee8d64434780ff464aebafa1.jar" />
+    </item>
+    <item
         jar="C:\Users\vsvankhede\.gradle\caches\modules-2\files-2.1\com.readystatesoftware.sqliteasset\sqliteassethelper\2.0.1\d5f02e4a4d65ec0fbb339f2e4228723d1540bb9f\sqliteassethelper-2.0.1.jar"
         jumboMode="false"
         revision="20.0.0"
@@ -14,6 +21,20 @@
         revision="20.0.0"
         sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
         <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0-da7f6d4a2578328f7d18a9b32b1daa8a6a532adf.jar" />
+    </item>
+    <item
+        jar="E:\Workplace\Android\SlidingMenu\app\build\intermediates\exploded-aar\com.nhaarman.listviewanimations\lib-core\3.1.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="acf66033b1418ccf9e15c8e77750981e4809c4ea">
+        <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\classes-1da1689b55db7277a9ca78eeb5e1fc16bd6f6f64.jar" />
+    </item>
+    <item
+        jar="E:\Workplace\Android\SlidingMenu\app\build\intermediates\exploded-aar\com.nhaarman.listviewanimations\lib-manipulation\3.1.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="5660e4bf78904137e90e62a5d4cc2e987258f02c">
+        <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\classes-fd6db571a8e9d4ed2adb1e4b81b0ad6d18577224.jar" />
     </item>
 
 </items>

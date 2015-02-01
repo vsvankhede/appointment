@@ -17,9 +17,14 @@ android {
         }
     }
 }
-
+repositories {
+    mavenCentral()
+}
 dependencies {
     compile 'com.android.support:support-v4:18.0.0'
     compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
-
+    compile 'com.nhaarman.listviewanimations:lib-core:3.1.0@aar'
+    compile 'com.nhaarman.listviewanimations:lib-manipulation:3.1.0@aar'
+    compile 'com.nhaarman.listviewanimations:lib-core-slh:3.1.0@aar'
+    compile 'com.nineoldandroids:parent:2.2.0'
 }
