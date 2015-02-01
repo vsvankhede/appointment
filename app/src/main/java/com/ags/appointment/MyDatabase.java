@@ -6,6 +6,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
@@ -20,25 +22,25 @@ public class MyDatabase extends SQLiteAssetHelper {
 
     // Select data from apnt_db.sqlite
     public Cursor getAppointment() {
-        SQLiteDatabase db = getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
-        String [] sqlSelect = {"rowid AS _id","title", "desc", "image", "time", "date"};
+        String [] sqlSelect = {"rowid AS _id","title", "desc", "image", "time", "date","id"};
         String sqlTables = "tbl_main";
 
         qb.setTables(sqlTables);
         Cursor c = qb.query(db, sqlSelect, null, null,
                 null, null, null);
-
         c.moveToFirst();
+
         return c;
     }
 
     // Insert data in apnt_db.sqlite
     public void setAppointment(String dt_title, String dt_desc, String dt_date, String dt_time, String dt_img){
 
-        //removed this.getWritableDatabase();
-        SQLiteDatabase db = getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase();
+
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
         String sqlTables = "tbl_main";
@@ -53,11 +55,26 @@ public class MyDatabase extends SQLiteAssetHelper {
             values.put("date", dt_date);
 
             qb.setTables(sqlTables);
-            db.insert(sqlTables,null,values);
+            db.insert(sqlTables, null, values);
 
             System.out.println("Data is stored...");
         }catch(Exception e){
             System.out.println(e);
         }
+
+    }
+    // Delete data
+    public void delete(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String sqlTables = "tbl_main";
+        try {
+            db.execSQL("delete from " + sqlTables + " where id='" + id + "'");
+            System.out.println("Deleted......................................'" + id + "'");
+        }catch (Exception e){}finally {
+            try {
+                db.close();
+            }catch (Exception e){}
+        }
+
     }
 }

@@ -17,7 +17,9 @@ public class MyListAdapter extends SimpleCursorAdapter {
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-
+            // Invisible Textview for rowid
+            TextView rowid = (TextView) view.findViewById(R.id.tv_id);
+            rowid.setText(cursor.getString(6));
             // Create the title textview with background image
             TextView title = (TextView) view.findViewById(R.id.item_title);
             title.setText(cursor.getString(1));

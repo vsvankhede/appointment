@@ -7,11 +7,10 @@
     android:paddingRight="8dp">
 
 
-    <ListView android:id="@+id/list"
+    <com.nhaarman.listviewanimations.itemmanipulation.DynamicListView
+        android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:drawSelectorOnTop="false"/>
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>

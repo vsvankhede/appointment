@@ -13,10 +13,15 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.nhaarman.listviewanimations.itemmanipulation.DynamicListView;
+import com.nhaarman.listviewanimations.itemmanipulation.swipedismiss.OnDismissCallback;
+
+import org.jetbrains.annotations.NotNull;
 
 public class MyListFragment extends Fragment {
 
@@ -47,20 +52,37 @@ public class MyListFragment extends Fragment {
         db = new MyDatabase(getActivity());
         c = db.getAppointment();
 
-        from = new String[]{"title", "desc", "image", "time", "date"};
-        to = new int[] { R.id.item_title, R.id.item_desc,R.id.item_time,R.id.item_date,R.id.list_image};
+        from = new String[]{"title", "desc", "image", "time", "date","id"};
+        to = new int[] { R.id.item_title, R.id.item_desc,R.id.item_time,R.id.item_date,R.id.list_image, R.id.tv_id};
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         final Context context = getActivity();
-
-        final ListView listView = (ListView) getView().findViewById(R.id.list);
-        MyListAdapter materials = new MyListAdapter(context, R.layout.row_list, c, from, to);
+        final MyDatabase md = new MyDatabase(getActivity());
+        final DynamicListView listView = (DynamicListView) getView().findViewById(R.id.list);
+        final MyListAdapter materials = new MyListAdapter(context, R.layout.row_list, c, from, to);
         listView.setAdapter(materials);
+        listView.enableSwipeToDismiss(
+                new OnDismissCallback() {
+                    @Override
+                    public void onDismiss(@NotNull final ViewGroup listView, @NotNull final int[] reverseSortedPositions) {
+                        for (int position : reverseSortedPositions) {
+                            TextView pos = (TextView) listView.getChildAt(position).findViewById(R.id.tv_id);
 
-        listView.setOnTouchListener(new View.OnTouchListener() {
+                            int id = Integer.valueOf(pos.getText().toString());
+                            System.out.println(id+"........................................rowid");
+                            md.delete(id);
+                            materials.getCursor().requery();
+                            materials.notifyDataSetChanged();
+                            //mAdapter.remove(position);
+
+                        }
+                    }
+                }
+        );
+       /* listView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
@@ -92,7 +114,7 @@ public class MyListFragment extends Fragment {
 
                 return false;
             }
-        });
+        });*/
     }
 
     public int getPos() {

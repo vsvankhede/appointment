@@ -16,13 +16,6 @@
         <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\sqliteassethelper-2.0.1-3f0584c2acf640fcb38e0691aab41c2cbca31595.jar" />
     </item>
     <item
-        jar="D:\sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
-        <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0-da7f6d4a2578328f7d18a9b32b1daa8a6a532adf.jar" />
-    </item>
-    <item
         jar="E:\Workplace\Android\SlidingMenu\app\build\intermediates\exploded-aar\com.github.navasmdc\MaterialDesign\1.4\classes.jar"
         jumboMode="false"
         revision="20.0.0"
@@ -49,6 +42,27 @@
         revision="20.0.0"
         sha1="5660e4bf78904137e90e62a5d4cc2e987258f02c">
         <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\classes-fd6db571a8e9d4ed2adb1e4b81b0ad6d18577224.jar" />
+    </item>
+    <item
+        jar="D:\sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0-da7f6d4a2578328f7d18a9b32b1daa8a6a532adf.jar" />
+    </item>
+    <item
+        jar="C:\Users\vsvankhede\.gradle\caches\modules-2\files-2.1\com.intellij\annotations\12.0\bbcf6448f6d40abe506e2c83b70a3e8bfd2b4539\annotations-12.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="bbcf6448f6d40abe506e2c83b70a3e8bfd2b4539">
+        <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\annotations-12.0-9b7656135afff83d21429ccf241b875fb7644a31.jar" />
+    </item>
+    <item
+        jar="C:\Users\vsvankhede\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\library-2.4.0-acceb9ccc35feaa648ea9ed50871e392cbe7547c.jar" />
     </item>
     <item
         jar="E:\Workplace\Android\SlidingMenu\app\build\intermediates\exploded-aar\library-release\classes.jar"
