@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:paddingLeft="8dp"
     android:paddingRight="8dp">
-
+    <SearchView android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:id="@+id/search" />
 
     <com.nhaarman.listviewanimations.itemmanipulation.DynamicListView
         android:id="@+id/list"

@@ -89,7 +89,6 @@ public class HomeFragment extends Fragment implements TimePickerDialogFragment.T
                         Toast.LENGTH_SHORT).show();
             }
         });
-
         // Click Listner event for time picker
         tv_time.setOnClickListener(new View.OnClickListener() {
             @Override

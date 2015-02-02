@@ -3,6 +3,7 @@ package com.ags.appointment;
 
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.ListFragment;
 import android.content.Context;
 import android.database.Cursor;
@@ -13,8 +14,10 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,16 +26,21 @@ import com.nhaarman.listviewanimations.itemmanipulation.swipedismiss.OnDismissCa
 
 import org.jetbrains.annotations.NotNull;
 
-public class MyListFragment extends Fragment {
+import java.sql.SQLException;
+
+public class MyListFragment extends Fragment implements SearchView.OnQueryTextListener,SearchView.OnCloseListener{
 
     public MyDatabase db;
     public Cursor c;
     int pos;
     private String[] from;
     private int[] to;
+    private  SearchView searchView;
     MotionEvent e1;
     float historicX = Float.NaN, historicY = Float.NaN;
     static final int DELTA = 50;
+
+
     enum Direction {LEFT, RIGHT;}
 
 
@@ -51,14 +59,23 @@ public class MyListFragment extends Fragment {
 
         db = new MyDatabase(getActivity());
         c = db.getAppointment();
+        //db.deleteAllAppointment();
+        //db.createFTS();
+        //db.copyData();
 
-        from = new String[]{"title", "desc", "image", "time", "date","id"};
+        from = new String[]{"title", "desc", "image", "time", "date","docid"};
         to = new int[] { R.id.item_title, R.id.item_desc,R.id.item_time,R.id.item_date,R.id.list_image, R.id.tv_id};
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        searchView = (SearchView) getView().findViewById(R.id.search);
+        searchView.setIconifiedByDefault(false);
+        searchView.setOnQueryTextListener(this);
+        searchView.setOnCloseListener(this);
+
         final Context context = getActivity();
         final MyDatabase md = new MyDatabase(getActivity());
         final DynamicListView listView = (DynamicListView) getView().findViewById(R.id.list);
@@ -76,47 +93,86 @@ public class MyListFragment extends Fragment {
                             md.delete(id);
                             materials.getCursor().requery();
                             materials.notifyDataSetChanged();
-                            //mAdapter.remove(position);
 
                         }
                     }
                 }
         );
-       /* listView.setOnTouchListener(new View.OnTouchListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-
-                // TODO Auto-generated method stub
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        historicX = event.getX();
-                        historicY = event.getY();
-                        break;
-
-                    case MotionEvent.ACTION_UP:
-                        if (event.getX() - historicX < -DELTA) {
-
-                            int pos = listView.pointToPosition((int) event.getX(), (int) event.getY());
-                            //FunctionDeleteRowWhenSlidingLeft();
-
-                            Toast.makeText(context, "slide left"+pos, Toast.LENGTH_SHORT).show();
-                            return true;
-                        } else if (event.getX() - historicX > DELTA) {
-                            //FunctionDeleteRowWhenSlidingRight();
-                            Toast.makeText(context, "slide right", Toast.LENGTH_SHORT).show();
-                            return true;
-                        }
-                        break;
-                    default:
-                        return false;
-                }
-
-                return false;
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Toast.makeText(getActivity(), "Item Clicked "+position, Toast.LENGTH_SHORT ).show();
+                Fragment mylistfragment =  new MyListFragment();
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.frame_container, mylistfragment)
+                        .addToBackStack(null)
+                        .commit();
             }
-        });*/
+        });
     }
 
+    @Override
+    public boolean onClose() {
+        try {
+            showResults("");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        try {
+            showResults(query + "*");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        try {
+            showResults(newText + "*");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    private void showResults(String query) throws SQLException {
+        Cursor cursor = db.searchAppointment((query != null ? query.toString() : "@@@@"));
+        Context context = getActivity();
+        if(cursor == null){
+            // Do nothing
+        }else {
+
+            final MyDatabase md = new MyDatabase(getActivity());
+            final DynamicListView listView = (DynamicListView) getView().findViewById(R.id.list);
+            final MyListAdapter materials = new MyListAdapter(context, R.layout.row_list, cursor, from, to);
+            listView.setAdapter(materials);
+            listView.enableSwipeToDismiss(
+                    new OnDismissCallback() {
+                        @Override
+                        public void onDismiss(@NotNull final ViewGroup listView, @NotNull final int[] reverseSortedPositions) {
+                            for (int position : reverseSortedPositions) {
+                                TextView pos = (TextView) listView.getChildAt(position).findViewById(R.id.tv_id);
+
+                                int id = Integer.valueOf(pos.getText().toString());
+                                System.out.println(id+"........................................rowid");
+                                md.delete(id);
+                                materials.getCursor().requery();
+                                materials.notifyDataSetChanged();
+                                //mAdapter.remove(position);
+                            }
+                        }
+                    }
+            );
+
+        }
+    }
     public int getPos() {
         return pos;
     }

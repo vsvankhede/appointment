@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "info.androidhive.slidingmenu"
         minSdkVersion 14
-        targetSdkVersion 17
+        targetSdkVersion 20
     }
 
     buildTypes {
@@ -17,16 +17,17 @@ android {
         }
     }
 }
+
 repositories {
     mavenCentral()
     jcenter()
     flatDir {
-        dirs 'libs' //this way we can find the .aar file in libs folder
+        dirs 'libs'
     }
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:18.0.0'
+    compile 'com.android.support:support-v4:20.0.0'
     compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
     compile 'com.nhaarman.listviewanimations:lib-core:3.1.0@aar'
     compile 'com.nhaarman.listviewanimations:lib-manipulation:3.1.0@aar'
@@ -35,7 +36,5 @@ dependencies {
     compile 'joda-time:joda-time:2.3'
     compile 'com.intellij:annotations:+@jar'
     compile 'com.github.navasmdc:MaterialDesign:1.+@aar'
-    compile (name:'library-release', ext:'aar') {
-        exclude module: 'support-v4'
-    }
+    compile (name:'library-release', ext:'aar')
 }

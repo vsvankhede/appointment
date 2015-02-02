@@ -132,17 +132,8 @@ public class MainActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.search_menu, menu);
+        inflater.inflate(R.menu.main, menu);
 
-        SearchManager searchManager = (SearchManager)
-                getSystemService(Context.SEARCH_SERVICE);
-        searchMenuItem = menu.findItem(R.id.search);
-        searchView = (SearchView) searchMenuItem.getActionView();
-
-        searchView.setSearchableInfo(searchManager.
-                getSearchableInfo(getComponentName()));
-        searchView.setSubmitButtonEnabled(true);
-       // searchView.setOnQueryTextListener();
 
         return true;
 	}
@@ -182,15 +173,7 @@ public class MainActivity extends Activity {
 		case 2:
 			fragment = new PhotosFragment();
 			break;
-	/*	case 3:
-			fragment = new CommunityFragment();
-			break;
-		case 4:
-			fragment = new PagesFragment();
-			break;
-		case 5:
-			fragment = new WhatsHotFragment();
-			break;*/
+
 
 		default:
 			break;
