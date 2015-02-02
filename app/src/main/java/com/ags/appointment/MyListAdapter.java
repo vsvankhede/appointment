@@ -26,7 +26,7 @@ public class MyListAdapter extends SimpleCursorAdapter {
 
             // create the description textview
             TextView description = (TextView) view.findViewById(R.id.item_desc);
-            description.setText(cursor.getString(3));
+            description.setText(cursor.getString(2));
 
             // create the description textview
             ImageView imageView = (ImageView) view.findViewById(R.id.list_image);
