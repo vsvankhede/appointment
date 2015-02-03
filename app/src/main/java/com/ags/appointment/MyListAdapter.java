@@ -41,4 +41,5 @@ public class MyListAdapter extends SimpleCursorAdapter {
             date.setText(cursor.getString(5));
 
     }
+
 }

@@ -12,14 +12,15 @@
         android:layout_height="wrap_content"
         android:padding="3dip"
         android:layout_alignParentLeft="true"
-
+        android:orientation="horizontal"
         android:layout_marginRight="5dip">
 
-        <ImageView
+        <com.ags.appointment.ResizableImageView
             android:id="@+id/list_image"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ic_launcher"/>
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_launcher" />
+
         <TextView android:id="@+id/tv_id"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -34,9 +35,10 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/thumbnail"
         android:layout_toRightOf="@+id/thumbnail"
+        android:paddingTop="4dp"
         android:textColor="#040404"
         android:typeface="sans"
-        android:textSize="15dip"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:text="Vijay Vankhede"/>
 
@@ -47,38 +49,64 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/item_title"
         android:textColor="#343434"
-        android:textSize="10dip"
+        android:textSize="12sp"
         android:layout_marginTop="1dip"
+        android:paddingTop="2dp"
         android:layout_toRightOf="@+id/thumbnail"
         android:text="Android Developer"
        />
-
+    <LinearLayout
+        android:id="@+id/ly_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignLeft="@id/item_title"
+        android:gravity="right"
+        android:layout_marginRight="4dp">
     <!-- Time -->
     <TextView
         android:id="@+id/item_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@id/item_title"
-        android:gravity="right"
         android:text="5:45"
         android:layout_marginRight="5dip"
-        android:textSize="10dip"
+
+        android:textSize="12sp"
         android:textColor="#040404"
         android:textStyle="bold"/>
-
+    <!--icon-->
+    <ImageView
+        android:layout_alignParentRight="true"
+        android:layout_alignRight="@id/item_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/clock96"/>
+    </LinearLayout>
     <!-- Date-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="4dp"
+        android:layout_below="@id/ly_time"
+        android:gravity="right"
+        android:layout_marginRight="4dp"
+        >
     <TextView
         android:id="@+id/item_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/item_time"
-        android:gravity="right"
         android:text="30/01/2015"
-        android:layout_marginRight="5dip"
-        android:textSize="10dip"
+        android:textSize="12sp"
         android:textColor="#040404"
-        android:textStyle="bold"/>
-
+        android:textStyle="bold"
+        android:layout_marginRight="5dip"/>
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:layout_alignRight="@id/item_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/calendar146"/>
+    </LinearLayout>
 </RelativeLayout>

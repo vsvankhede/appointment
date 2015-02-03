@@ -7,6 +7,8 @@ import android.app.FragmentManager;
 import android.app.ListFragment;
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 
 import android.util.Log;
@@ -16,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -93,7 +96,43 @@ public class MyListFragment extends Fragment implements SearchView.OnQueryTextLi
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Toast.makeText(getActivity(), "Item Clicked "+position, Toast.LENGTH_SHORT ).show();
                 Fragment mylistfragment =  new ListDetailFragment();
+                TextView tv_pos = (TextView) listView.getChildAt(position).findViewById(R.id.tv_id);
+                TextView tv_title = (TextView) listView.getChildAt(position).findViewById(R.id.item_title);
+                TextView tv_desc = (TextView) listView.getChildAt(position).findViewById(R.id.item_desc);
+                TextView tv_time = (TextView) listView.getChildAt(position).findViewById(R.id.item_time);
+                TextView tv_date = (TextView) listView.getChildAt(position).findViewById(R.id.item_date);
+
+                ImageView iv_image = (ImageView) listView.getChildAt(position).findViewById(R.id.list_image);
+
+                String place = tv_pos.getText().toString();
+                String title = tv_title.getText().toString();
+                String desc = tv_desc.getText().toString();
+                String time = tv_time.getText().toString();
+                String date = tv_date.getText().toString();
+                String path = iv_image.getResources().toString();
+
+                Log.w("TITLE",title);
+                Log.w("ID",place);
+                Log.w("DESCRIPTION",desc);
+                Log.w("TIME",time);
+                Log.w("DATE",date);
+                Log.w("PATH",path);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("ID",place);
+                bundle.putString("TITLE", title);
+                bundle.putString("DESCRIPTION", desc);
+                bundle.putString("TIME", time);
+                bundle.putString("DATE", date);
+                bundle.putString("PATH", path);
+
+                mylistfragment.setArguments(bundle);
+
                 FragmentManager fragmentManager = getFragmentManager();
+
+
+
+
                 fragmentManager.beginTransaction()
                         .replace(R.id.frame_container, mylistfragment)
                         .addToBackStack(null)
@@ -151,7 +190,6 @@ public class MyListFragment extends Fragment implements SearchView.OnQueryTextLi
             if (cursor == null) {
                 // Do nothing
             } else {
-
                 final MyDatabase md = new MyDatabase(getActivity());
                 final DynamicListView listView = (DynamicListView) getView().findViewById(R.id.list);
                 final MyListAdapter materials = new MyListAdapter(context, R.layout.row_list, cursor, from, to);
@@ -168,12 +206,10 @@ public class MyListFragment extends Fragment implements SearchView.OnQueryTextLi
                                     md.delete(id);
                                     materials.getCursor().requery();
                                     materials.notifyDataSetChanged();
-                                    //mAdapter.remove(position);
                                 }
                             }
                         }
                 );
-
             }
         }
 

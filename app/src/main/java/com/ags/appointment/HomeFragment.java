@@ -87,6 +87,11 @@ public class HomeFragment extends Fragment implements TimePickerDialogFragment.T
                 md.setAppointment(title, desc, date, time, image);
                 Toast.makeText(context, "Appointment Saved!",
                         Toast.LENGTH_SHORT).show();
+                et_title.setText("");
+                et_desc.setText("");
+                tv_time.setText("");
+                tv_date.setText("");
+                tv_picture.setText("");
             }
         });
         // Click Listner event for time picker
