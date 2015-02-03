@@ -129,10 +129,6 @@ public class MyListFragment extends Fragment implements SearchView.OnQueryTextLi
                 mylistfragment.setArguments(bundle);
 
                 FragmentManager fragmentManager = getFragmentManager();
-
-
-
-
                 fragmentManager.beginTransaction()
                         .replace(R.id.frame_container, mylistfragment)
                         .addToBackStack(null)

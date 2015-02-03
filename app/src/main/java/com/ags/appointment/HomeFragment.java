@@ -78,11 +78,13 @@ public class HomeFragment extends Fragment implements TimePickerDialogFragment.T
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String title = et_title.getText().toString();
                 String desc = et_desc.getText().toString();
                 String time = tv_time.getText().toString();
                 String date = tv_date.getText().toString();
                 String image = getImagePath();
+                if(!title.equals("") && !desc.equals("")){
                 MyDatabase md = new MyDatabase(getActivity());
                 md.setAppointment(title, desc, date, time, image);
                 Toast.makeText(context, "Appointment Saved!",
@@ -92,6 +94,9 @@ public class HomeFragment extends Fragment implements TimePickerDialogFragment.T
                 tv_time.setText("");
                 tv_date.setText("");
                 tv_picture.setText("");
+                }else{
+                    Toast.makeText(getActivity(), "Please fill data in Title & Description!",Toast.LENGTH_SHORT).show();
+                }
             }
         });
         // Click Listner event for time picker
