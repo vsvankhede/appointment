@@ -16,13 +16,6 @@
         <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\sqliteassethelper-2.0.1-3f0584c2acf640fcb38e0691aab41c2cbca31595.jar" />
     </item>
     <item
-        jar="E:\Workplace\Android\SlidingMenu\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d">
-        <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-829a08ebb86f34a2a201399e8939299ec09d3405.jar" />
-    </item>
-    <item
         jar="E:\Workplace\Android\SlidingMenu\app\build\intermediates\exploded-aar\com.github.navasmdc\MaterialDesign\1.4\classes.jar"
         jumboMode="false"
         revision="20.0.0"
@@ -35,6 +28,20 @@
         revision="20.0.0"
         sha1="56498efd17752898cfcc3868c1b6211a07b12b8f">
         <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\joda-time-2.3-dac04fe458008d738a665a9d942a634ac1b13e67.jar" />
+    </item>
+    <item
+        jar="D:\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.0\support-annotations-21.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e">
+        <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-109b19c666215de27411e9285902971e9f7e8122.jar" />
+    </item>
+    <item
+        jar="E:\Workplace\Android\SlidingMenu\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\libs\internal_impl-21.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0">
+        <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.0-8a97feff4a5fab003569e662ed237fbb6f48d59b.jar" />
     </item>
     <item
         jar="E:\Workplace\Android\SlidingMenu\app\build\intermediates\exploded-aar\com.nhaarman.listviewanimations\lib-core\3.1.0\classes.jar"
@@ -51,11 +58,11 @@
         <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\classes-fd6db571a8e9d4ed2adb1e4b81b0ad6d18577224.jar" />
     </item>
     <item
-        jar="D:\sdk\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
+        jar="E:\Workplace\Android\SlidingMenu\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa">
-        <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-f049a32939fe37978093cf1b512e8c3fc5b8d14e.jar" />
+        sha1="686344a780033e4ba22b926cd225f8d4941247e6">
+        <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\classes-a9cd01c5d0180ee42c59628a50851d23db9ef15b.jar" />
     </item>
     <item
         jar="C:\Users\vsvankhede\.gradle\caches\modules-2\files-2.1\com.intellij\annotations\12.0\bbcf6448f6d40abe506e2c83b70a3e8bfd2b4539\annotations-12.0.jar"
@@ -63,13 +70,6 @@
         revision="20.0.0"
         sha1="bbcf6448f6d40abe506e2c83b70a3e8bfd2b4539">
         <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\annotations-12.0-9b7656135afff83d21429ccf241b875fb7644a31.jar" />
-    </item>
-    <item
-        jar="E:\Workplace\Android\SlidingMenu\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="8694693636ab36910c8100ce527c258ff3ebece0">
-        <dex dex="E:\Workplace\Android\SlidingMenu\app\build\intermediates\pre-dexed\debug\classes-da07052200a252a85a064bca7bcc7f1628d111eb.jar" />
     </item>
     <item
         jar="C:\Users\vsvankhede\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"

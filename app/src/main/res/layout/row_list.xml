@@ -15,7 +15,7 @@
         android:orientation="horizontal"
         android:layout_marginRight="5dip">
 
-        <com.ags.appointment.ResizableImageView
+        <ImageView
             android:id="@+id/list_image"
             android:layout_width="60dp"
             android:layout_height="60dp"
