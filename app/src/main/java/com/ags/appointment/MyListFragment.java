@@ -102,7 +102,7 @@ public class MyListFragment extends Fragment implements SearchView.OnQueryTextLi
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Toast.makeText(getActivity(), "Item Clicked "+position, Toast.LENGTH_SHORT ).show();
-                Fragment mylistfragment =  new MyListFragment();
+                Fragment mylistfragment =  new ListDetailFragment();
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction()
                         .replace(R.id.frame_container, mylistfragment)
@@ -125,7 +125,9 @@ public class MyListFragment extends Fragment implements SearchView.OnQueryTextLi
     @Override
     public boolean onQueryTextSubmit(String query) {
         try {
-            showResults(query + "*");
+            if (query != "") {
+                showResults(query + "*");
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -135,7 +137,9 @@ public class MyListFragment extends Fragment implements SearchView.OnQueryTextLi
     @Override
     public boolean onQueryTextChange(String newText) {
         try {
-            showResults(newText + "*");
+            if(newText != "") {
+                showResults(newText + "*");
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -173,6 +177,7 @@ public class MyListFragment extends Fragment implements SearchView.OnQueryTextLi
 
         }
     }
+    
     public int getPos() {
         return pos;
     }
