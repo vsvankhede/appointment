@@ -36,13 +36,6 @@ public class MyListFragment extends Fragment implements SearchView.OnQueryTextLi
     private String[] from;
     private int[] to;
     private  SearchView searchView;
-    MotionEvent e1;
-    float historicX = Float.NaN, historicY = Float.NaN;
-    static final int DELTA = 50;
-
-
-    enum Direction {LEFT, RIGHT;}
-
 
     public MyListFragment(){}
 
@@ -59,9 +52,6 @@ public class MyListFragment extends Fragment implements SearchView.OnQueryTextLi
 
         db = new MyDatabase(getActivity());
         c = db.getAppointment();
-        //db.deleteAllAppointment();
-        //db.createFTS();
-        //db.copyData();
 
         from = new String[]{"title", "desc", "image", "time", "date","docid"};
         to = new int[] { R.id.item_title, R.id.item_desc,R.id.item_time,R.id.item_date,R.id.list_image, R.id.tv_id};
@@ -115,6 +105,7 @@ public class MyListFragment extends Fragment implements SearchView.OnQueryTextLi
     @Override
     public boolean onClose() {
         try {
+
             showResults("");
         } catch (SQLException e) {
             e.printStackTrace();
@@ -125,8 +116,11 @@ public class MyListFragment extends Fragment implements SearchView.OnQueryTextLi
     @Override
     public boolean onQueryTextSubmit(String query) {
         try {
-            if (query != "") {
+            if (!query.equals("")){
+                Log.w("newText", query);
                 showResults(query + "*");
+            }else {
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -137,8 +131,12 @@ public class MyListFragment extends Fragment implements SearchView.OnQueryTextLi
     @Override
     public boolean onQueryTextChange(String newText) {
         try {
-            if(newText != "") {
+            if(!newText.equals(""))
+            {
+                Log.w("newText", newText);
                 showResults(newText + "*");
+            }else {
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -147,36 +145,38 @@ public class MyListFragment extends Fragment implements SearchView.OnQueryTextLi
     }
 
     private void showResults(String query) throws SQLException {
-        Cursor cursor = db.searchAppointment((query != null ? query.toString() : "@@@@"));
-        Context context = getActivity();
-        if(cursor == null){
-            // Do nothing
-        }else {
 
-            final MyDatabase md = new MyDatabase(getActivity());
-            final DynamicListView listView = (DynamicListView) getView().findViewById(R.id.list);
-            final MyListAdapter materials = new MyListAdapter(context, R.layout.row_list, cursor, from, to);
-            listView.setAdapter(materials);
-            listView.enableSwipeToDismiss(
-                    new OnDismissCallback() {
-                        @Override
-                        public void onDismiss(@NotNull final ViewGroup listView, @NotNull final int[] reverseSortedPositions) {
-                            for (int position : reverseSortedPositions) {
-                                TextView pos = (TextView) listView.getChildAt(position).findViewById(R.id.tv_id);
+            Cursor cursor = db.searchAppointment((query != null ? query.toString() : "@@@@"));
+            Context context = getActivity();
+            if (cursor == null) {
+                // Do nothing
+            } else {
 
-                                int id = Integer.valueOf(pos.getText().toString());
-                                System.out.println(id+"........................................rowid");
-                                md.delete(id);
-                                materials.getCursor().requery();
-                                materials.notifyDataSetChanged();
-                                //mAdapter.remove(position);
+                final MyDatabase md = new MyDatabase(getActivity());
+                final DynamicListView listView = (DynamicListView) getView().findViewById(R.id.list);
+                final MyListAdapter materials = new MyListAdapter(context, R.layout.row_list, cursor, from, to);
+                listView.setAdapter(materials);
+                listView.enableSwipeToDismiss(
+                        new OnDismissCallback() {
+                            @Override
+                            public void onDismiss(@NotNull final ViewGroup listView, @NotNull final int[] reverseSortedPositions) {
+                                for (int position : reverseSortedPositions) {
+                                    TextView pos = (TextView) listView.getChildAt(position).findViewById(R.id.tv_id);
+
+                                    int id = Integer.valueOf(pos.getText().toString());
+                                    System.out.println(id + "........................................rowid");
+                                    md.delete(id);
+                                    materials.getCursor().requery();
+                                    materials.notifyDataSetChanged();
+                                    //mAdapter.remove(position);
+                                }
                             }
                         }
-                    }
-            );
+                );
 
+            }
         }
-    }
+
     
     public int getPos() {
         return pos;
